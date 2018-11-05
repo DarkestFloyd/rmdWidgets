@@ -6,7 +6,7 @@
 \usage{
 rmd_textbox(text, textcolor = "black", title = "",
   titlecolor = "black", titleback = "yellow", backcolor = "white",
-  rounded = "1", format = "latex")
+  rounded = "1", type = "info")
 }
 \arguments{
 \item{text}{Content of the text box.}
@@ -23,8 +23,7 @@ rmd_textbox(text, textcolor = "black", title = "",
 
 \item{rounded}{Describes how much the corner of the text box would be rounded.}
 
-\item{format}{"latex" or "html". Controlled by global option
-\code{rmdWidgets.format}}
+\item{type}{Type of the textbox, typically info or warning.}
 }
 \description{
 Add textbox

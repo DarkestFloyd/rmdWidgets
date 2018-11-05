@@ -5,7 +5,7 @@
 \title{Add checkbox}
 \usage{
 rmd_checkbox(choices, selected = NULL, label = NULL, inline = T,
-  label_inline = T, format = "latex")
+  label_inline = T)
 }
 \arguments{
 \item{choices}{A character vector for all the choices}
@@ -18,9 +18,6 @@ rmd_checkbox(choices, selected = NULL, label = NULL, inline = T,
 
 \item{label_inline}{T/F for whether the label row should be placed inline
 with the choices. Default T.}
-
-\item{format}{"latex" or "html". Controlled by global option
-\code{rmdWidgets.format}}
 }
 \description{
 Add checkbox

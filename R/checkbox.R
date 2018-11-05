@@ -6,21 +6,19 @@
 #' @param inline T/F for whether choices should be aligned inline. Default T.
 #' @param label_inline T/F for whether the label row should be placed inline 
 #' with the choices. Default T.
-#' @param format "latex" or "html". Controlled by global option 
-#' `rmdWidgets.format`
-#' 
-#' @importFrom knitr asis_output
+#'
+#' @importFrom knitr asis_output is_latex_output
 #' @import glue
 #' @export
 rmd_checkbox <- function(choices, selected = NULL, label = NULL, 
-                         inline = T, label_inline = T, 
-                         format = "latex") {
-  if (format == "latex") {
+                         inline = T, label_inline = T) {
+                         #format = "latex") {
+  if (is_latex_output()) {
     return(
       rmd_checkbox_latex(choices, selected, label, inline, label_inline)
     )
   }
-  if (format == "html") {
+  else {
     return(
       rmd_checkbox_html(choices, selected, label, inline, label_inline)
     )

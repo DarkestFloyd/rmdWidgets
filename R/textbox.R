@@ -8,23 +8,20 @@
 #' @param backcolor Color of the background of the text. Default white.  
 #' @param rounded Describes how much the corner of the text box would be rounded. 
 #' @param type Type of the textbox, typically info or warning. 
-#' @param format "latex" or "html". Controlled by global option 
-#' `rmdWidgets.format`
 #' 
-#' @importFrom knitr asis_output
+#' @importFrom knitr asis_output is_latex_output
 #' @import glue
 #' @export
 rmd_textbox <- function(text, textcolor = "black", 
                         title = "", titlecolor = "black", titleback = "yellow", 
-                        backcolor = "white", rounded = "1", type = "info", 
-                        format = "latex") {
-  if (format == "latex") {
+                        backcolor = "white", rounded = "1", type = "info") {
+  if (is_latex_output()) {
     return(
       rmd_textbox_latex(text, textcolor, title, titlecolor, titleback, 
                         backcolor, rounded, type)
     )
   }
-  if (format == "html") {
+  else {
     return(
       rmd_textbox_html(text, textcolor, title, titlecolor, titleback, 
                         backcolor, rounded, type)
